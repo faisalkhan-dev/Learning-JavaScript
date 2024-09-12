@@ -1,3 +1,5 @@
+//For loops,break and continue,do while
+
 for (let i = 0; i <=10; i ++) {
     console.log(i)
 }
