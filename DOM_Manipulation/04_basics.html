@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_basics</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName){ //Not to much optimised way
+        const li = document.createElement('li')
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang("Python")
+    addLang("Java")
+
+    function addLangOptimisedWay(langName){ //Optimised function
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addLangOptimisedWay('TypeScript')
+    addLangOptimisedWay('Ruby')
+
+    //Edit
+    const secondLang=document.querySelector("li:nth-child(2)")  //Not so optimised
+    console.log(secondLang)
+    //secondLang.innerHTML="BhaiLang"               //Python->BhaiLang
+
+    const newli= document.createElement('li')       //Optimised Way
+    newli.textContent="BhaiLang"
+    secondLang.replaceWith(newli)
+
+    const firstLang=document.querySelector("li:first-child")
+    firstLang.outerHTML='<li>TypeScript</li>'
+     
+    //remove
+    const lastLang=document.querySelector("li:nth-child(3)")
+    lastLang.remove()       //Java removed
+
+</script>
+</html>
