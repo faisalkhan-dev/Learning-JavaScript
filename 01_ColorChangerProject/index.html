@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Switcher project _01</title>
+</head>
+<style>
+    span {
+        display: inline-block;
+        /* Makes width and height apply to span */
+        height: 100px;
+        /* Set desired height */
+        width: 100px;
+        /* Set desired width */
+        text-align: center;
+        /* Center text horizontally */
+        line-height: 100px;
+        /* Center text vertically */
+        margin: 10px;
+        /* Add spacing between the spans */
+        cursor: pointer;
+        /* Makes it clear that the spans are clickable */
+        font-size: 20px;
+        /* Increase font size for better readability */
+        border-color: black;
+        border-style: groove;
+        border-radius: 20px;
+    }
+
+
+    #orange {
+        background-color: orange;
+    }
+
+    #white {
+        background-color: white;
+    }
+
+    #green {
+        background-color: green;
+    }
+
+    #black {
+        background-color: black;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="canvas">
+        <h1>Color Scheme Switcher</h1>
+        <div class="span">
+            <span class="button" id="orange">orange</span>
+            <span class="button" id="white">white</span>
+            <span class="button" id="green">green</span>
+            <span class="button" id="black">black</span>
+        </div>
+
+        <h2>Click on any picture,it will change the background-color same</h2>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
