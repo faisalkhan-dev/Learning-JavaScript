@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Projectt</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+#wrapper {
+    background-color: #fff;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+}
+
+form {
+    margin: 20px 0;
+}
+
+label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.guessField {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.guessSubmit {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.guessSubmit:hover {
+    background-color: #218838;
+}
+
+.resultParas {
+    margin-top: 20px;
+}
+
+.resultParas p {
+    font-size: 16px;
+    color: #333;
+}
+
+span {
+    font-weight: bold;
+}
+
+.lowOrHigh {
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.lastResult {
+    color: #e72020;
+}
+
+.guesses {
+    color: #007bff;
+}
+
+</style>
+<body>
+    <div id="wrapper">
+        <h1>Guess The number</h1>
+        <p>Try guessing number between 1 to 100</p>
+        <p>You have 10 attempts to guess the right number</p>
+        <br>
+        <form action="" class="form">
+            <label for="guessField" id="guess">Guess a number</label>
+            <input type="text" id="guessField" class="guessField">
+            <input type="submit"  id="submit" value="submit guess" class="guessSubmit">
+        </form>
+
+        <div class="resultParas">
+            <p>Previous Guesses : <span class="guesses"></span> </p>
+            <p>Guess Remaining : <span class="lastResult">10</span> </p>
+            <p class="lowOrHigh"></p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
