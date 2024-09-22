@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #414141; color:aliceblue">
+    <h2>Amazing Images</h2>
+    <div>
+        <div id="images">
+            <li><img  width="200px" id="river" src="https://cdn.pixabay.com/photo/2024/04/09/22/28/trees-8686902_1280.jpg" alt=""></li>
+            <li><img  width="200px" id="tea" src="https://cdn.pixabay.com/photo/2023/11/30/07/08/bread-8420931_1280.jpg" alt=""></li>
+            <li><img  width="200px" id="home" src="https://media.istockphoto.com/id/1534040386/photo/an-outdoor-bamboo-gazebo-nestled-amidst-lush-greenery-offering-serene-relaxation-after-a.jpg?s=1024x1024&w=is&k=20&c=puHgSbTQpBTWvqIBd69gDXvBgDwpor6-fdYJoU0Hihc=" alt=""></li>
+            <li><img  width="200px" id="book" src="https://cdn.pixabay.com/photo/2024/03/19/19/08/book-8643905_1280.jpg" alt=""></li>
+        </div>
+    </div>
+</body>
+<script>
+    const image=document.querySelector('#images').addEventListener('click',function(e){
+       console.log(e)
+    //    console.log(e.target.parentNode)
+    //    const removeImg=e.target.parentNode
+    //    removeImg.remove()
+
+       //Now,this will remove all the image if you will click just outside image.So ,to make it desired
+
+       console.log(e.target.tagName);   //return string
+       if(e.target.tagName=="IMG"){
+        e.target.parentNode.remove();
+       }
+    })
+</script>
+</html>
