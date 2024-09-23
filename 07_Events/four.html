@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning async function</title>
+</head>
+
+<body>
+    <h1>JavaScript journey from Chai aur Code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let intervalId; // Store the interval ID here
+
+const start = function (str) {
+    console.log(str, Date.now());
+};
+
+// Start the interval when the 'start' button is clicked
+document.querySelector('#start').addEventListener('click', function () {
+    // Check if an interval is already running, and prevent multiple intervals
+    if (!intervalId) {
+        intervalId = setInterval(start, 1000, 'Hi !'); // Store the interval ID
+    }
+});
+
+// Stop the interval when the 'stop' button is clicked
+document.querySelector('#stop').addEventListener('click', function () {
+    if (intervalId) {
+        clearInterval(intervalId); // Use the interval ID to stop the interval
+        intervalId = null; // Clear the interval ID after stopping
+        console.log('Interval cleared');
+    }
+});
+
+
+</script>
+
+</html>
