@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <h1>In Http request using AJAX(Asynchronous JavaScript and XML),it uses 5 states</h1>
+    0 - UNSENT: The XMLHttpRequest object has been created, but the open() method has not been called yet. <br>
+
+    1 - OPENED: The open() method has been called, but the send() method has not been called yet. The request is now
+    ready to be sent. <br>
+
+    2 - HEADERS_RECEIVED: The send() method has been called, and the response headers and status code have been
+    received. However, the body of the response is not yet available. <br>
+
+    3 - LOADING: The response body is being received. The data is being downloaded, but it's not complete yet. <br>
+
+    4 - DONE: The operation is complete, and the full response has been received. This is the state where you can access
+    the response data. <br>
+</body>
+<script>
+     const requestUrl="https://api.github.com/users/faisalkhan-dev";
+     const xhr=new XMLHttpRequest();
+     xhr.open('GET',requestUrl);
+    //  xhr.onreadystatechange=function(){
+    //     console.log(xhr.readyState) //print state whenever change
+    //     if(xhr.readyState===4){
+    //         const data=this.responseText;
+    //         console.log(data.follower); //give undefined because data is a string so we have to convert it into object JSON
+    //     }
+    //  }
+
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState) //print state whenever change
+        if(xhr.readyState===4){
+            const data=JSON.parse(this.responseText); //JSON.parse chnage string to Object(JSON)
+            console.log(data.followers);    //Now,it will give your github followers i.e 1 at this time
+        }
+     }
+     xhr.send();
+</script>
+</html>
